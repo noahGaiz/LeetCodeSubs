@@ -26,28 +26,15 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        true2 = True
-        true3 = True
-        true5 = True
+    
         while n > 0:
-            while true2:
-                if n % 2 == 0:  
-                    n //= 2
-                else:
-                    true2 = False
-
-            while true3:
-                if n % 3 == 0:
-                    n //= 3
-                else:
-                    true3 = False
-
-            while true5:
-                if n % 5 == 0:
-                    n //= 5
-                else:
-                    true5 = False
+            while n % 2 == 0:  
+                n //= 2
+            while n % 3 == 0:
+                n //= 3
+            while n % 5 == 0:
+                n //= 5
+                
 
             return n == 1
-        return n == 0
-
+        return False
