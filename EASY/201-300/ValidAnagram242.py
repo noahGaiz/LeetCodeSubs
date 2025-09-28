@@ -21,5 +21,19 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return sorted(s) == sorted(t)
+        if len(s) != len(t):
+            return False
+        dc = {}
+        
+        
+        for i in s:
+            dc[i] = dc.get(i, 0) +1
+        for i in t:
+            if i not in dc:
+                return False
+            dc[i] -= 1 
+            if dc[i] < 0: 
+                return False
+        return True
+        # return sorted(s) == sorted(t)
         
